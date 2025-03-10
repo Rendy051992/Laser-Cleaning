@@ -1,0 +1,369 @@
+/* ============================== */
+/* RESET - odstráni predvolené štýly */
+/* ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ============================== */
+/* KONTAJNER - zarážky na obsah */
+/* ============================== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================== */
+/* HLAVIČKA */
+/* ============================== */
+.site-header {
+  background-color: #111;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* HLAVIČKA - vnútorný kontajner */
+.header-container {
+  display: flex;
+  justify-content: space-between; /* logo vľavo, menu vpravo */
+  align-items: center;
+  height: 80px;
+  padding: 0 20px;
+}
+
+/* LOGO TEXT vľavo */
+.logo-text {
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  flex-shrink: 0; /* nezmenšuje sa */
+}
+
+/* ============================== */
+/* HLAVNÉ NAVIGAČNÉ MENU */
+/* ============================== */
+.site-nav ul {
+  display: flex;
+  gap: 30px; /* medzera medzi položkami */
+  list-style: none;
+}
+
+.site-nav ul li {
+  position: relative;
+}
+
+.site-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  display: block;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER efekt na menu položky */
+.site-nav ul li a:hover {
+  background-color: #00ADEF;
+  box-shadow: 0 4px 10px rgba(0, 173, 239, 0.5);
+  transform: translateY(-2px);
+}
+
+/* ============================== */
+/* DROPDOWN MENU pre SERVICES */
+/* ============================== */
+.dropdown-menu {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 220px;
+  border-radius: 5px;
+  transition: max-height 0.4s ease-out;
+  z-index: 999;
+}
+
+/* Aktívne submenu */
+.dropdown-menu.active {
+  max-height: 500px;
+}
+
+/* ŠTÝL PODMOŽNOSTÍ */
+.dropdown-menu li a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+/* HOVER efekt na submenu */
+.dropdown-menu li a:hover {
+  background-color: #00ADEF;
+  box-shadow: inset 4px 0 0 #fff;
+}
+
+/* ŠÍPKA PRI SERVICES */
+.dropdown > a::after {
+  content: "▼";
+  font-size: 12px;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown.open > a::after {
+  transform: rotate(180deg);
+}
+
+/* ============================== */
+/* HAMBURGER MENU pre MOBILY */
+/* ============================== */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ============================== */
+/* HERO SEKCIA */
+/* ============================== */
+.hero {
+  margin-top: 80px; /* kvôli pevnej hlavičke */
+  background-color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* HERO OBSAH */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+}
+
+/* TEXT V HERO */
+.hero-text {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+/* ============================== */
+/* KRUHOVÉ LOGO */
+/* ============================== */
+.hero-logo-circle {
+  width: 250px;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.hero-logo-circle:hover {
+  transform: scale(1.05);
+}
+
+/* VNÚTORNÉ LOGO V KRUHU */
+.circle-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* orezá logo tak, aby vyplnilo kruh */
+  aspect-ratio: 1 / 1; /* zachová štvorcový pomer */
+}
+
+/* ============================== */
+/* DYNAMIC CONTENT SEKCIA */
+/* ============================== */
+.dynamic-content {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+/* ============================== */
+/* GALÉRIA */
+/* ============================== */
+.gallery {
+  background-color: #555;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* ============================== */
+/* KONTAKT FORMULÁR */
+/* ============================== */
+.contact-section {
+  padding: 80px 0;
+  background-color: #f4f4f4;
+}
+
+.contact-section .container {
+  max-width: 600px;
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.contact-section h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333;
+}
+
+/* Formulárové skupiny */
+#contact-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* INPUT a TEXTAREA */
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+/* FOCUS efekt */
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #00ADEF;
+  box-shadow: 0 0 8px rgba(0, 173, 239, 0.3);
+  outline: none;
+}
+
+/* TLAČIDLO odoslať */
+#contact-form button {
+  background-color: #00ADEF;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contact-form button:hover {
+  background-color: #008bbf;
+  transform: translateY(-2px);
+}
+
+/* SPRÁVA PO ODOSLANÍ */
+#form-message {
+  margin-top: 15px;
+  color: green;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* ============================== */
+/* ABOUT US STRÁNKA */
+/* ============================== */
+.about-content {
+  margin-top: 100px;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.about-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ============================== */
+/* FOOTER */
+/* ============================== */
+.site-footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ============================== */
+/* RESPONSÍVNE MEDIA QUERIES */
+/* ============================== */
+@media (max-width: 768px) {
+  .hamburger {
+      display: block;
+  }
+
+  .site-nav {
+      display: none;
+      position: absolute;
+      top: 80px;
+      right: 0;
+      background-color: #111;
+      width: 100%;
+      text-align: center;
+  }
+
+  .site-nav.active {
+      display: block;
+  }
+
+  .site-nav ul {
+      flex-direction: column;
+      gap: 0;
+  }
+
+  .dropdown-menu {
+      position: static;
+      width: 100%;
+  }
+
+  /* Menšie logo v hero sekcii na mobile */
+  .hero-logo-circle {
+      width: 200px;
+      height: 200px;
+  }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Laser Cleaning Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HLAVIČKA -->
+    <header class="site-header">
+        <div class="header-container">
+            <h1 class="logo-text">ILCS LTD</h1>
+
+            <nav class="site-nav" id="nav-menu">
+                <ul>
+                    <li><a href="#" onclick="goHome()">Home</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" onclick="toggleServices()">Services</a>
+                        <ul class="dropdown-menu" id="services-menu">
+                            <li><a href="#">Laser Rust Removal</a></li>
+                            <li><a href="#">Industrial Equipment Cleaning</a></li>
+                            <li><a href="#">Surface Preparation</a></li>
+                            <li><a href="#">Eco-Friendly Solutions</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="about.html">About Us</a></li>
+
+                    <li><a href="#" onclick="showContact()">Contact Us</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        </div>
+    </header>
+
+    <!-- HERO SEKCIA -->
+    <section class="hero parallax">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Industrial Laser Cleaning</h2>
+                <p>Revolutionary Technology for Industrial Cleaning Solutions</p>
+            </div>
+
+            <div class="hero-logo-circle">
+                <img src="images/LOGO/Laser logo 4.png" alt="Logo" class="circle-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- HLAVNÝ OBSAH -->
+    <section class="dynamic-content">
+        <div class="container" id="dynamic-section">
+            <p>Click on menu items to show more information...</p>
+        </div>
+    </section>
+
+    <!-- GALÉRIA -->
+    <section class="gallery parallax">
+        <div class="container">
+            <h2>Gallery</h2>
+            <p>Coming soon... Images and videos will be here.</p>
+        </div>
+    </section>
+
+    <!-- KONTAKT FORMULÁR -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form" onsubmit="return validateForm()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message"></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+                <p id="form-message"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2025 Industrial Laser Cleaning Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
